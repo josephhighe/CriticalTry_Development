@@ -6,11 +6,13 @@ class LandingPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="text-center">
         <h1>This is the landing page for our dope ass website</h1>
         <br />
-        <Link to="/login">
-          <button>Click to login</button>
+        <Link to="/login" className="center-block">
+          <button className="btn btn-primary btn-xl text-uppercase center-block">
+            Click to login
+          </button>
         </Link>
       </div>
     );

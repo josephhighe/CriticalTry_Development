@@ -1,9 +1,16 @@
 import React, { Component } from "react";
+import LoginComponent from "../components/LoginComponent";
 
 class LoginPage extends Component {
   state = {};
+
   render() {
-    return <h1>Login</h1>;
+    return (
+      <div className="text-center">
+        <br />
+        <LoginComponent className="center" />
+      </div>
+    );
   }
 }
 

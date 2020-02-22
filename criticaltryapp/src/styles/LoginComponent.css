@@ -1,0 +1,19 @@
+.card.login-card {
+  width: 23rem;
+  border: 2px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.5rem;
+}
+
+.form-group {
+  text-align: left;
+}
+
+label.compact {
+  margin-bottom: 0;
+}
+
+#login-btn,
+#register-btn {
+  border-radius: 1rem;
+  width: 7rem;
+}
