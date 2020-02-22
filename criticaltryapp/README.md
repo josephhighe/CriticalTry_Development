@@ -1,3 +1,47 @@
+<h1>Additional Modules:</h1>
+<br/>
+
+<h3>React-router-dom:<h3> <br/>
+<pre> used to make a single page application
+<b> `npm install react-router-dom`</b>
+</pre>
+<br/>
+
+<h3>Bootstrap<h3> <br/>
+<pre> make css easier
+<b>`npm install bootstrap` </b>
+</pre>
+<br/>
+
+<h1>Visual Studio Code Extensions:</h1>
+<br/>
+
+<h3>Prettier - Code Formatter<h3> <br/>
+<pre> By Ebsen Peterson
+Formats the code in a nice way
+Also should set up File -> Preferences -> Settings -> Text Editor -> Formatting -> enable 'Format a file on save'
+</pre>
+<br/>
+
+<h3>Simple React Snippets<h3> <br/>
+<pre> By Burke Holland
+Provides shortcuts to quickly add react code
+<b>`imrc`</b> adds 
+<b>`import React, { Component } from 'react';`</b>
+<br/>
+<b>`cc`</b> adds 
+<b>class  extends Component {
+    state = {  }
+    render() { 
+        return (  );
+    }
+}
+ 
+export default ;
+</b>
+</pre>
+<br/>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
