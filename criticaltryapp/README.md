@@ -9,7 +9,7 @@
 
 <h3>Bootstrap<h3> <br/>
 <pre> make css easier
-<b>`npm install bootstrap` </b>
+<b>`npm install react-bootstrap bootstrap` </b>
 </pre>
 <br/>
 
