@@ -1,15 +1,16 @@
 import React from "react";
-import "./App.css";
 import "./pages/LoginPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import LandingPage from "./pages/LandingPage";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <header></header>
+        <head></head>
         <body>
           <Switch>
             <Route path="/" exact component={LandingPage} />
