@@ -1,48 +1,45 @@
 <h1>Additional Modules:</h1>
 <br/>
 
-<h3>React-router-dom:<h3> <br/>
-<pre> used to make a single page application
-<b> `npm install react-router-dom`</b>
+<h3>Server Dependencies:<h3> <br/>
+<pre> You can insall all dependencies by running the following:
+<b>`npm install express body-parser dotenv pusher-js uuid` </b>
 </pre>
 <br/>
 
-<h3>Bootstrap<h3> <br/>
-<pre> make css easier
-<b>`npm install bootstrap` </b>
+<h3>express:<h3> <br/>
+<pre> used for a live painting server
+<b> `npm install express`</b>
 </pre>
 <br/>
 
-<h1>Visual Studio Code Extensions:</h1>
-<br/>
-
-<h3>Prettier - Code Formatter<h3> <br/>
-<pre> By Ebsen Peterson
-Formats the code in a nice way
-Also should set up File -> Preferences -> Settings -> Text Editor -> Formatting -> enable 'Format a file on save'
+<h3>body-parser:<h3> <br/>
+<pre> read request body data from ansync requests
+<b>`npm install body-parser` </b>
 </pre>
 <br/>
 
-<h3>Simple React Snippets<h3> <br/>
-<pre> By Burke Holland
-Provides shortcuts to quickly add react code
-<b>`imrc`</b> adds 
-<b>`import React, { Component } from 'react';`</b>
-<br/>
-<b>`cc`</b> adds 
-<b>class  extends Component {
-    state = {  }
-    render() { 
-        return (  );
-    }
-}
- 
-export default ;
-</b>
+<h3>dotenv:<h3> <br/>
+<pre> enables the creation of a '.env' file to write constant environment variables
+<b>`npm install dotenv` </b>
 </pre>
 <br/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h3>pusher:<h3> <br/>
+<pre> channel client for server
+<b>`npm install pusher-js` </b>
+</pre>
+If you're looking for the Pusher Channels server library for Node.js, use
+[pusher-http-node](https://github.com/pusher/pusher-http-node) instead.
+
+For tutorials and more in-depth information about Pusher Channels, visit
+our [official docs](https://pusher.com/docs/javascript_quick_start).
+<br/>
+
+<h3>uuid:<h3> <br/>
+<pre> Universal Unique ID Generation
+<b>`npm install uuid` </b>
+</pre>
 
 ## Available Scripts
 
@@ -55,6 +52,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
+
+### `node server`
+
+Start the live paint server. Run this script in a separate terminal in the root folder of your project.
 
 ### `npm test`
 
