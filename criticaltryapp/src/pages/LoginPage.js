@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import LoginComponent from "../components/LoginComponent";
+import "../styles/LoginPage.css";
 
 class LoginPage extends Component {
   state = {};
 
   render() {
     return (
-      <div className="text-center">
-        <br />
+      <div id="loginComponent" className="text-center bg-dark">
         <LoginComponent className="center" />
       </div>
     );

@@ -11,7 +11,7 @@ function App() {
     <Router>
       <div className="App">
         <head></head>
-        <body>
+        <body className="bg-dark">
           <Switch>
             <Route path="/" exact component={LandingPage} />
             <Route path="/login" component={LoginPage} />
