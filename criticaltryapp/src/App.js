@@ -1,7 +1,9 @@
 import React, { Fragment, Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './table.css';
 import Canvas from './canvas';
+import Table from './table';
 
 class App extends Component {
   render() {
@@ -14,6 +16,7 @@ class App extends Component {
             <div className="user user">User</div>
             <div className="user guest">Guest</div>
           </div>
+          <Table />
           <Canvas />
         </div>
       </Fragment>

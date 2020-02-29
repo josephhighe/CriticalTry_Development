@@ -144,7 +144,7 @@ class Canvas extends Component {
         return (
             <canvas
                 ref={(ref) => (this.canvas = ref)}
-                style={{ background: 'black' }}
+                style={{ background: 'lightgreen',opacity: .5 }}
                 onMouseDown={this.onMouseDown}
                 onMouseLeave={this.endPaintEvent}
                 onMouseUp={this.endPaintEvent}
