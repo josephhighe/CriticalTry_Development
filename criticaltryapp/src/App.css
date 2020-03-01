@@ -46,7 +46,7 @@
   border-radius: 0.5em;
 }
 
-body {
+.main {
   position: fixed;
   height: 100%;
   width: 100%;

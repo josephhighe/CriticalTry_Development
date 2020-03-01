@@ -1,6 +1,12 @@
 <h1>Additional Modules:</h1>
 <br/>
 
+<h3>connected-react-router</h3> <br/>
+<pre> Used to allow passing redux state around while routing.
+https://github.com/supasate/connected-react-router
+<b> `npm install connected-react-router`</b>
+</pre>
+
 <h3>React-router-dom:<h3> <br/>
 <pre> used to make a single page application
 <b> `npm install react-router-dom`</b>
@@ -10,6 +16,14 @@
 <h3>Bootstrap<h3> <br/>
 <pre> make css easier
 <b>`npm install react-bootstrap bootstrap` </b>
+</pre>
+<br/>
+
+<h1>Chrome Extensions:</h1>
+<br/>
+
+<h3>Redux DevTools<h3> <br/>
+<pre> Allows you to see the state from Redux, good for debugging
 </pre>
 <br/>
 
