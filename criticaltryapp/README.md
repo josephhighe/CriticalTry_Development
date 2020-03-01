@@ -2,19 +2,27 @@
 <br/>
 
 <h3>connected-react-router</h3> <br/>
-<pre> Used to allow passing redux state around while routing.
+<pre>Used to allow passing redux state around while routing.
 https://github.com/supasate/connected-react-router
 <b> `npm install connected-react-router`</b>
 </pre>
 
-<h3>React-router-dom:<h3> <br/>
-<pre> used to make a single page application
+<h3>react-router-dom:</h3> <br/>
+<pre>Used to make a single page application
 <b> `npm install react-router-dom`</b>
 </pre>
 <br/>
 
+<h3>react-thunk</h3><br/>
+<pre>Redux middleware that checks each action for whether they are a
+function, and passes in 'dispatch' and 'state' to give more functionality
+to actions.
+<b>`npm install react-thunk`</b>
+</pre>
+<br/>
+
 <h3>Bootstrap<h3> <br/>
-<pre> make css easier
+<pre>Make css easier
 <b>`npm install react-bootstrap bootstrap` </b>
 </pre>
 <br/>

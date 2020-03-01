@@ -1,28 +1,33 @@
 import { ACCOUNT_ACTION } from "../reducers/AccountReducer";
 
+const accountObj = user => {
+  return {
+    type: ACCOUNT_ACTION,
+    payload: user
+  };
+};
+
 export const LoginAction = user => {
-  //try to login
+  //TODO actually login
+
+  //TODO set this based if login was valid
   let isValid = true;
 
-  //if valid login
   if (isValid) {
     //TODO remove below, used as mock data
     //updating user data with data from DB
     user.init("Bobbert", "McBobbertson", user.username, user.pass);
 
-    //user is logged in, account data is valid
-    user.isValid = true;
+    //user is logged in
+    user.login();
 
-    //return updated user information to be store in global state
-    return {
-      type: ACCOUNT_ACTION,
-      payload: user
-    };
+    return accountObj(user);
   }
 
-  //failed login, return null
-  return {
-    type: ACCOUNT_ACTION,
-    payload: null
-  };
+  //update account info
+  user.failedLogin();
+
+  //TODO handle login by calling actions to lock account if needed
+
+  return accountObj(user);
 };

@@ -1,40 +1,32 @@
 import React, { Component } from "react";
-import UserAccount from "../state/models/UserAccount";
+import { connect } from "react-redux";
 
+import { LoginAction } from "../state/actions/LoginAction";
+import RoutingUtil from "../utils/RoutingUtil";
 import "../styles/LoginComponent.css";
 
-import RoutingUtil from "../utils/RoutingUtil";
-
 class LoginComponent extends Component {
-  state = {};
-
-  constructor(props) {
-    super(props);
-
-    //hook used to login
-    this.loginHook = props.loginHook;
-
-    this.state.redirect = false;
-  }
+  state = {
+    redirect: false
+  };
 
   login(event) {
-    //create an account based upon the login creds
-    let user = new UserAccount();
-    user = user.initDef(this.state.username, this.state.password);
+    //grab user, should never be invalid based on how redux works
+    let user = this.props.user;
 
-    console.log(user);
+    //update user information
+    let username = this.state.username;
+    let password = this.state.password;
+    user.initDef(username, password);
 
-    //use loginHook
-    this.loginHook(user);
+    //dispatch login action
+    this.props.login(user);
 
-    console.log(user);
-
-    //if user successfully logged in
-    if (user.isLoggedIn()) {
-      this.setState(() => ({
-        redirect: true
-      }));
-    }
+    //update state
+    this.setState(() => ({
+      redirect: user.isLoggedIn(),
+      isAccountLocked: user.isAccountLocked()
+    }));
   }
 
   onUsernameChange(event) {
@@ -49,6 +41,7 @@ class LoginComponent extends Component {
     if (this.state.redirect === true) {
       return RoutingUtil.toLandingPage();
     }
+    //TODO handle account being locked
 
     const inputClass = "form-control";
     const formGroupClass = "form-group";
@@ -90,6 +83,7 @@ class LoginComponent extends Component {
 
             <button
               id="login-btn"
+              type="button"
               className="btn btn-primary"
               onClick={this.login.bind(this)}
             >
@@ -102,4 +96,14 @@ class LoginComponent extends Component {
   }
 }
 
-export default LoginComponent;
+const mapStateToProps = state => {
+  return { user: state.AccountReducer };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    login: user => dispatch(LoginAction(user))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginComponent);

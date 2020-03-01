@@ -1,7 +1,7 @@
 import "../models/UserAccount";
 import UserAccount from "../models/UserAccount";
 
-export const ACCOUNT_ACTION = "AccountAction";
+export const ACCOUNT_ACTION = "ACCOUNT_ACTION_ID";
 
 const AccountReducer = (state = new UserAccount(), action) => {
   //only act on certain actions
