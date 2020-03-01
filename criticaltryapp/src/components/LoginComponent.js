@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import { useDispatch } from "react-redux";
 import UserAccount from "../state/models/UserAccount";
 
 import "../styles/LoginComponent.css";
-import { LoginAction } from "../state/actions/LoginAction";
 
 import RoutingUtil from "../utils/RoutingUtil";
 
@@ -104,17 +102,4 @@ class LoginComponent extends Component {
   }
 }
 
-function LoginComponentFunc() {
-  const dispatch = useDispatch();
-
-  return (
-    <LoginComponent
-      loginHook={user => {
-        dispatch(LoginAction(user));
-      }}
-    ></LoginComponent>
-  );
-}
-
-// export default LoginComponent;
-export default LoginComponentFunc;
+export default LoginComponent;

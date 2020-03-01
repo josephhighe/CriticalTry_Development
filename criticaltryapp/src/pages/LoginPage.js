@@ -1,17 +1,21 @@
-import React, { Component } from "react";
-import LoginComponentFunc from "../components/LoginComponent";
+import React from "react";
+import { useDispatch } from "react-redux";
+import LoginComponent from "../components/LoginComponent";
+import { LoginAction } from "../state/actions/LoginAction";
 import "../styles/LoginPage.css";
 
-class LoginPage extends Component {
-  state = {};
+function LoginPage() {
+  const dispatch = useDispatch();
 
-  render() {
-    return (
-      <div id="loginComponent" className="text-center bg-dark">
-        <LoginComponentFunc />
-      </div>
-    );
-  }
+  return (
+    <div id="loginComponent" className="text-center bg-dark">
+      <LoginComponent
+        loginHook={user => {
+          dispatch(LoginAction(user));
+        }}
+      />
+    </div>
+  );
 }
 
 export default LoginPage;
