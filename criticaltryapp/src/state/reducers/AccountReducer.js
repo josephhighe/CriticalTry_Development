@@ -1,9 +1,11 @@
 import "../models/UserAccount";
 import UserAccount from "../models/UserAccount";
 
+export const ACCOUNT_ACTION = "AccountAction";
+
 const AccountReducer = (state = new UserAccount(), action) => {
   //only act on certain actions
-  if (action.type !== "Account" || action.isConsumed) {
+  if (action.type !== ACCOUNT_ACTION || action.isConsumed) {
     return state;
   }
 

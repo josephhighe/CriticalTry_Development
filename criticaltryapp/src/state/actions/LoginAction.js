@@ -1,3 +1,5 @@
+import { ACCOUNT_ACTION } from "../reducers/AccountReducer";
+
 export const LoginAction = user => {
   //try to login
   let isValid = true;
@@ -13,14 +15,14 @@ export const LoginAction = user => {
 
     //return updated user information to be store in global state
     return {
-      type: "Account",
+      type: ACCOUNT_ACTION,
       payload: user
     };
   }
 
   //failed login, return null
   return {
-    type: "Account",
+    type: ACCOUNT_ACTION,
     payload: null
   };
 };
