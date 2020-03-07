@@ -29,7 +29,7 @@ class InputComponent extends Component {
 
     const inputClass = "form-control";
     const formGroupClass = "form-group";
-    const type = this.props.type ? "text" : this.props.type;
+    const type = this.props.type ? this.props.type : "text";
 
     const label = this.props.labelText;
     const placeholder = this.props.placeholder;
