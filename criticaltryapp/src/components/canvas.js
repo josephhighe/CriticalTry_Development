@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { v4 } from 'uuid';
 import Pusher from 'pusher-js';
+import { tableProps } from '../state/properties/properties.js'
 
 class Canvas extends Component {
     constructor(props) {
@@ -115,8 +116,8 @@ class Canvas extends Component {
          * Todo:
          *  -Change these properties variables
          */
-        this.canvas.width = 1000;
-        this.canvas.height = 800;
+        this.canvas.width = tableProps.x * tableProps.cell_Width;
+        this.canvas.height = tableProps.y * tableProps.cell_Height;
         this.ctx = this.canvas.getContext('2d');
         this.ctx.lineJoin = 'round';
         this.ctx.lineCap = 'round';

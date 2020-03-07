@@ -16,9 +16,12 @@ class App extends Component {
             <div className="user user">User</div>
             <div className="user guest">Guest</div>
           </div>
-          <Table />
-          <Canvas />
+          <div>
+            <Table />
+            <Canvas />
+          </div>
         </div>
+
       </Fragment>
     );
   }

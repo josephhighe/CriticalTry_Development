@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { tableProps } from '../state/properties/properties.js';
 
 class Square extends React.Component {
     render() {
@@ -19,8 +20,8 @@ class Table extends React.Component {
     // Currently, this is a bit of a half-measure, but improvements will come in time
     render() {
         // These properties will determine the size of the grid table drawn
-        const x = 20;
-        const y = 20;
+        const x = tableProps.x;
+        const y = tableProps.y;
 
         // rows is an array of the rows of the table to be drawn
         let rows = [];
