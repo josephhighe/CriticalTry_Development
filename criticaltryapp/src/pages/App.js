@@ -1,12 +1,12 @@
 import React from "react";
-import "./pages/LoginPage";
+import "./LoginPage";
 import { Switch, Route } from "react-router-dom";
-import LoginPage from "./pages/LoginPage";
-import LandingPage from "./pages/LandingPage";
+import LoginPage from "./LoginPage";
+import LandingPage from "./LandingPage";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
-import { Pages } from "./utils/RoutingUtil";
+import "../styles/App.css";
+import { Pages } from "../utils/RoutingUtil";
 
 function App() {
   return (

@@ -4,6 +4,11 @@ import { connect } from "react-redux";
 import { LoginAction } from "../state/actions/LoginAction";
 import RoutingUtil from "../utils/RoutingUtil";
 import "../styles/LoginComponent.css";
+import InputComponent from "./InputComponent";
+
+export const usernameId = "username";
+export const passwordId = "password";
+export const loginBtnId = "login-btn";
 
 class LoginComponent extends Component {
   state = {
@@ -55,34 +60,30 @@ class LoginComponent extends Component {
             <hr />
             <br />
 
-            <div className={formGroupClass}>
-              <label className="compact">Name:</label>
-              <input
-                type="text"
-                className={inputClass}
-                id="usr"
-                placeholder="Bobbert@bob.com"
-                onChange={this.onUsernameChange.bind(this)}
-              />
-            </div>
+            <InputComponent
+              id={usernameId}
+              type="text"
+              labelText="Name"
+              placeholder="Bobbert"
+              error="Invalid Username"
+              onTextChangeCallback={this.onUsernameChange.bind(this)}
+            />
 
             <br />
 
-            <div className={formGroupClass}>
-              <label className="compact">Password:</label>
-              <input
-                type="password"
-                className={inputClass}
-                id="pwd"
-                placeholder="Bobbert123"
-                onChange={this.onPasswordChange.bind(this)}
-              />
-            </div>
+            <InputComponent
+              id={passwordId}
+              type="password"
+              labelText="Password"
+              placeholder="Bobbert123"
+              error="Invalid password"
+              onTextChangeCallback={this.onPasswordChange.bind(this)}
+            />
 
             <br />
 
             <button
-              id="login-btn"
+              id={loginBtnId}
               type="button"
               className="btn btn-primary"
               onClick={this.login.bind(this)}
