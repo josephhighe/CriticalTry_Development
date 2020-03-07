@@ -1,9 +1,9 @@
 import React, { Fragment, Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import './table.css';
-import Canvas from './canvas';
-import Table from './table';
+import logo from '../logo.svg';
+import '../styles/App.css';
+import '../styles/table.css';
+import Canvas from '../components/canvas';
+import Table from '../components/table';
 
 class App extends Component {
   render() {

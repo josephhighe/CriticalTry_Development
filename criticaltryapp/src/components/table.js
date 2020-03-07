@@ -35,7 +35,7 @@ class Table extends React.Component {
                 cells.push(this.drawSquare(cellID));
             }
 
-            // here we establish the render for the table rows and the number of squares to draw
+        // here we establish the render for the table rows and the number of squares to draw
         rows.push(<div key={i} id={rowID}>{cells}</div>);
         }
         return (
