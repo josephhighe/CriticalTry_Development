@@ -13,11 +13,17 @@ https://github.com/supasate/connected-react-router
 </pre>
 <br/>
 
+<h3>Redux</h3><br/>
+<pre>Use to store state information
+<b>`npm install redux react-redux`</b>
+</pre>
+<br/>
+
 <h3>react-thunk</h3><br/>
 <pre>Redux middleware that checks each action for whether they are a
 function, and passes in 'dispatch' and 'state' to give more functionality
 to actions.
-<b>`npm install react-thunk`</b>
+<b>`npm install redux-thunk`</b>
 </pre>
 <br/>
 
