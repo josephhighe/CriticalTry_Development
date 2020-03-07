@@ -2,13 +2,25 @@ import React, { Component } from "react";
 import "../styles/InputComponent.css";
 
 class InputComponent extends Component {
+  state = {
+    enableError: this.props.enableError
+  };
+
   onTextChange(event) {
     this.props.onTextChangeCallback(event);
   }
 
-  displayError() {}
+  setError(bValue) {
+    this.setState({ enableError: bValue });
+  }
 
-  hideError() {}
+  enableError() {
+    this.setError(true);
+  }
+
+  hideError() {
+    this.setError(false);
+  }
 
   render() {
     const id = this.props.id;
@@ -22,7 +34,7 @@ class InputComponent extends Component {
     const label = this.props.labelText;
     const placeholder = this.props.placeholder;
     const error = this.props.error;
-    const enableError = error && this.props.enableError;
+    const enableError = error && this.state.enableError;
 
     return (
       <div className={formGroupClass}>

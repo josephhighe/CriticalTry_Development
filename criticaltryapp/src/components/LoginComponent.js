@@ -32,6 +32,8 @@ class LoginComponent extends Component {
       redirect: user.isLoggedIn(),
       isAccountLocked: user.isAccountLocked()
     }));
+
+    //TODO handle show errors
   }
 
   onUsernameChange(event) {
@@ -46,10 +48,9 @@ class LoginComponent extends Component {
     if (this.state.redirect === true) {
       return RoutingUtil.toLandingPage();
     }
+
     //TODO handle account being locked
 
-    const inputClass = "form-control";
-    const formGroupClass = "form-group";
     const formClass = "card login-card bg-info center " + this.props.className;
 
     return (
@@ -62,10 +63,9 @@ class LoginComponent extends Component {
 
             <InputComponent
               id={usernameId}
-              type="text"
               labelText="Name"
               placeholder="Bobbert"
-              error="Invalid Username"
+              error="Invalid username"
               onTextChangeCallback={this.onUsernameChange.bind(this)}
             />
 
