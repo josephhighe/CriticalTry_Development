@@ -1,13 +1,13 @@
 import React from "react";
-import "./LoginPage";
 import { Switch, Route } from "react-router-dom";
-import LoginPage from "./LoginPage";
-import LandingPage from "./LandingPage";
-import RegistrationPage from "./RegistrationPage";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/App.css";
+
 import { Pages } from "../utils/RoutingUtil";
+import LandingPage from "./LandingPage";
+import LoginPage from "./LoginPage";
+import RegistrationPage from "./RegistrationPage";
 
 function App() {
   const backgroundColor = "bg-dark";

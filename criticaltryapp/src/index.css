@@ -13,9 +13,14 @@ code {
 }
 
 .btn-smooth {
-  border-radius: 1em;
+  border-radius: 1rem;
 }
 
 .compact {
   margin: 0rem;
+}
+
+/*Makes it so elements are side by side instead of vertically stackes*/
+.inline-block {
+  display: inline-block;
 }

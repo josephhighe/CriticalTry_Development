@@ -1,18 +1,21 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
+import RoutingUtil, { Pages } from "../utils/RoutingUtil";
 import { PLACEHOLDER_ACCOUNT } from "../state/models/UserAccount";
 import { LoginAction } from "../state/actions/LoginAction";
-import RoutingUtil, { Pages } from "../utils/RoutingUtil";
+import Card, { ID_PREFIX as ROOT_ID_PREFIX } from "./card/Card";
 import InputComponent from "./inputcomponent/InputComponent";
 
 import "../styles/Card.css";
 import "../styles/LoginComponent.css";
-import { Link } from "react-router-dom";
 
-export const usernameId = "username";
-export const passwordId = "password";
-export const loginBtnId = "login-btn";
+const ROOT_ID_SUFFIX = "login-component";
+export const ROOT_ID = ROOT_ID_PREFIX + ROOT_ID_SUFFIX;
+export const USERNAME_ID = "username";
+export const PASSWORD_ID = "password";
+export const LOGIN_BTN_ID = "login-btn";
 
 //placeholder account information to display
 const USER = PLACEHOLDER_ACCOUNT;
@@ -60,55 +63,50 @@ class LoginComponent extends Component {
 
     //TODO handle account being locked
 
-    const formClass = "card login-card bg-info center " + this.props.className;
-
     return (
-      <div id="loginComponent" className="text-center">
-        <form onSubmit={this.login.bind(this)}>
-          <div className={formClass}>
-            <div className="card-body">
-              <h2>Critical Try Login</h2>
-              <hr />
+      <Card id={ROOT_ID_SUFFIX}>
+        <h2>Critical Try Login</h2>
+        <hr />
 
-              <div>
-                Don't have an account?
-                <Link to={Pages.REGISTRATION}> Create one!</Link>
-              </div>
-              <br />
+        <div className="container-fluid">
+          <p className="inline-block">Don't have an account?</p>
+          &nbsp;
+          <Link className="inline-block" to={Pages.REGISTRATION}>
+            Create one!
+          </Link>
+        </div>
+        <br />
 
-              <InputComponent
-                id={usernameId}
-                label="Name"
-                error="Invalid username"
-                placeholder={USER.username}
-                onTextChangeCallback={this.onUsernameChange.bind(this)}
-              />
+        <InputComponent
+          id={USERNAME_ID}
+          label="Name"
+          error="Invalid username"
+          placeholder={USER.username}
+          onTextChangeCallback={this.onUsernameChange.bind(this)}
+        />
 
-              <br />
+        <br />
 
-              <InputComponent
-                id={passwordId}
-                type="password"
-                label="Password"
-                error="Invalid password"
-                placeholder={USER.pass}
-                onTextChangeCallback={this.onPasswordChange.bind(this)}
-              />
+        <InputComponent
+          id={PASSWORD_ID}
+          type="password"
+          label="Password"
+          error="Invalid password"
+          placeholder={USER.pass}
+          onTextChangeCallback={this.onPasswordChange.bind(this)}
+        />
 
-              <br />
+        <br />
 
-              <button
-                id={loginBtnId}
-                type="button"
-                className="btn-smooth btn btn-primary"
-                onClick={this.login.bind(this)}
-              >
-                Login
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
+        <button
+          id={LOGIN_BTN_ID}
+          type="button"
+          className="btn-smooth btn btn-primary"
+          onClick={this.login.bind(this)}
+        >
+          Login
+        </button>
+      </Card>
     );
   }
 }

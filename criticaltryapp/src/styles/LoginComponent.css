@@ -1,7 +1,7 @@
-.card.login-card {
-  width: 23em;
+.card.card-background {
+  width: 23rem;
 }
 
-#loginComponent {
+.card-root {
   padding: 10%;
 }
