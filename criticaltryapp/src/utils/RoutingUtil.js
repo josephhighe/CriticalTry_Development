@@ -3,7 +3,8 @@ import { Redirect } from "react-router-dom";
 
 export const Pages = {
   LANDING: "/",
-  LOGIN: "/login"
+  LOGIN: "/login",
+  REGISTRATION: "/registration"
 };
 
 class RoutingUtil {
@@ -17,6 +18,10 @@ class RoutingUtil {
 
   static toLoginPage() {
     return this.redirect(Pages.LOGIN);
+  }
+
+  static toRegistration() {
+    return this.redirect(Pages.REGISTRATION);
   }
 }
 

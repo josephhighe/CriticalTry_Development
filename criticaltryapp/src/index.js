@@ -1,4 +1,3 @@
-import "./index.css";
 import App from "./pages/App";
 import StoreFactory, { history } from "./state/StoreFactory";
 
@@ -10,6 +9,9 @@ import * as serviceWorker from "./serviceWorker";
 //redux
 import { Provider } from "react-redux";
 import { ConnectedRouter as Router } from "connected-react-router";
+
+//needs to be imported AFTER react so sub-css files override index.css
+import "./index.css";
 
 //create the store for our state
 const store = StoreFactory();

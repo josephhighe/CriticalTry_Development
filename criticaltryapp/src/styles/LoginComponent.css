@@ -2,24 +2,6 @@
   width: 23em;
 }
 
-.form-group {
-  text-align: left;
-}
-
-label.compact {
-  margin-bottom: 0;
-}
-
-#login-btn,
-#register-btn {
-  border-radius: 1em;
-  width: 40%;
-}
-
-#login-btn {
-  margin-right: 5%;
-}
-
-#register-btn {
-  margin-left: 5%;
+#loginComponent {
+  padding: 10%;
 }

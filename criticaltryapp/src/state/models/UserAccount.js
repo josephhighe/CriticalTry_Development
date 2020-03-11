@@ -43,4 +43,11 @@ class UserAccount {
   }
 }
 
+export const PLACEHOLDER_ACCOUNT = new UserAccount().init(
+  "Bobbert",
+  "McBobbertson",
+  "bobbert@bobbert.com",
+  "Bobbert123"
+);
+
 export default UserAccount;
