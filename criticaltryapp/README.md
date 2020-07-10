@@ -1,3 +1,75 @@
+<h1>Additional Modules:</h1>
+<br/>
+
+<h3>connected-react-router</h3> <br/>
+<pre>Used to allow passing redux state around while routing.
+https://github.com/supasate/connected-react-router
+<b> `npm install connected-react-router`</b>
+</pre>
+
+<h3>react-router-dom:</h3> <br/>
+<pre>Used to make a single page application
+<b> `npm install react-router-dom`</b>
+</pre>
+<br/>
+
+<h3>Redux</h3><br/>
+<pre>Use to store state information
+<b>`npm install redux react-redux`</b>
+</pre>
+<br/>
+
+<h3>react-thunk</h3><br/>
+<pre>Redux middleware that checks each action for whether they are a
+function, and passes in 'dispatch' and 'state' to give more functionality
+to actions.
+<b>`npm install redux-thunk`</b>
+</pre>
+<br/>
+
+<h3>Bootstrap<h3> <br/>
+<pre>Make css easier
+<b>`npm install react-bootstrap bootstrap` </b>
+</pre>
+<br/>
+
+<h1>Chrome Extensions:</h1>
+<br/>
+
+<h3>Redux DevTools<h3> <br/>
+<pre> Allows you to see the state from Redux, good for debugging
+</pre>
+<br/>
+
+<h1>Visual Studio Code Extensions:</h1>
+<br/>
+
+<h3>Prettier - Code Formatter<h3> <br/>
+<pre> By Ebsen Peterson
+Formats the code in a nice way
+Also should set up File -> Preferences -> Settings -> Text Editor -> Formatting -> enable 'Format a file on save'
+</pre>
+<br/>
+
+<h3>Simple React Snippets<h3> <br/>
+<pre> By Burke Holland
+Provides shortcuts to quickly add react code
+<b>`imrc`</b> adds 
+<b>`import React, { Component } from 'react';`</b>
+<br/>
+<b>`cc`</b> adds 
+<b>class  extends Component {
+    state = {  }
+    render() { 
+        return (  );
+    }
+}
+ 
+export default ;
+</b>
+</pre>
+<br/>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

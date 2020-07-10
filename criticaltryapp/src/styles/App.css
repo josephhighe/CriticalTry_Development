@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.center {
+  margin: auto;
+}
+
+.card {
+  border: 2px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.5em;
+}
+
+.main {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
