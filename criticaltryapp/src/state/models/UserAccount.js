@@ -39,6 +39,7 @@ class UserAccount {
   }
 
   isAccountLocked() {
+    //TODO change to be based upon backend information
     return MAX_LOGIN_ATTEMPTS < this.loginAttemps;
   }
 }

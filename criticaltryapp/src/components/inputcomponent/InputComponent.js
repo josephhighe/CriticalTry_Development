@@ -6,12 +6,37 @@ import "../../styles/InputComponent.css";
 import ErrorComponent from "./ErrorComponent";
 import HintComponent from "./HintComponent";
 
+/**
+ * Common input element types. A full list can be found:
+ * https://www.w3schools.com/html/html_form_input_types.asp
+ */
+export const InputTypes = {
+  BUTTON: "button",
+  DATE: "date",
+  EMAIL: "email",
+  HIDDEN: "hidden",
+  NUMBER: "number",
+  PASSWORD: "password",
+  RADIO: "radio",
+  RANGE: "range",
+  SEARCH: "search",
+  SUBMIT: "submit",
+  TELEPHONE: "tel",
+  TEXT: "text",
+  TIME: "time",
+  URL: "url",
+};
+
+/**
+ * Component class to represent an input element.
+ * Provides hint, label, and error text elements to provide user with more information.
+ */
 class InputComponent extends Component {
   state = {
-    enableError: this.props.enableError
+    enableError: this.props.enableError,
   };
 
-  onTextChange = function(event) {
+  onTextChange = function (event) {
     this.props.onTextChangeCallback(event);
   };
 
@@ -39,7 +64,7 @@ class InputComponent extends Component {
       : formGroupClass;
 
     //input element type
-    const type = this.props.type ? this.props.type : "text";
+    const type = this.props.type ? this.props.type : InputTypes.TEXT;
 
     return (
       <div className={rootClass}>
