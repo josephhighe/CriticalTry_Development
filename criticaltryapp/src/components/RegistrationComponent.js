@@ -4,19 +4,28 @@ import { connect } from "react-redux";
 import { PLACEHOLDER_ACCOUNT } from "../state/models/UserAccount";
 import { LoginAction } from "../state/actions/LoginAction";
 import RoutingUtil, { Pages } from "../utils/RoutingUtil";
-import InputComponent from "./inputcomponent/InputComponent";
+import InputComponent, { InputTypes } from "./inputcomponent/InputComponent";
 import Card from "./card/Card";
 
 import "../styles/RegistrationComponent.css";
 import { Link } from "react-router-dom";
 
-export const firstNameId = "firstname";
-export const lastNameId = "lastname";
-export const emailId = "email";
-export const passwordId = "password";
-export const passwordTwoId = "password-two";
-export const registerBtnId = "login-btn";
-export const ROOT_ID_SUFFIX = "registration-component";
+export const RegistrationComponentIds = {
+  FIRST_NAME: "firstname",
+  LAST_NAME: "lastname",
+  EMAIL: "email",
+  PASSWORD_ONE: "password",
+  PASSWORD_TWO: "password-two",
+  REGISTRATION_BUTTON: "registration-btn",
+  ROOT_ID_SUFFIX: "registration-component",
+};
+
+const RegistrationComponentCss = {
+  ROW_CLASS: "row",
+  COLUMN_CLASS: "col-sm-6 col-xs-12",
+  EMAIL_COLUMN_CLASS: "col-sm-12 col-xs-12",
+  REGISTRATION_BUTTON_CLASS: "btn btn-primary btn-smooth",
+};
 
 //placeholder account information to display
 const USER = PLACEHOLDER_ACCOUNT;
@@ -25,7 +34,7 @@ const USER = PLACEHOLDER_ACCOUNT;
 
 class RegistrationComponent extends Component {
   state = {
-    redirect: false
+    redirect: false,
   };
 
   register(event) {
@@ -61,11 +70,8 @@ class RegistrationComponent extends Component {
       return RoutingUtil.toLandingPage();
     }
 
-    const columnClass = "col-sm-6 col-xs-12";
-    const emailColumnClass = "col-sm-12 col-xs-12";
-
     return (
-      <Card id={ROOT_ID_SUFFIX}>
+      <Card id={RegistrationComponentIds.REGISTRATION_BUTTON}>
         <h2>Register New Account</h2>
         <hr />
 
@@ -78,10 +84,10 @@ class RegistrationComponent extends Component {
         </div>
         <br />
 
-        <div className="row">
-          <div className={emailColumnClass}>
+        <div className={RegistrationComponentCss.ROW_CLASS}>
+          <div className={RegistrationComponentCss.EMAIL_COLUMN_CLASS}>
             <InputComponent
-              id={emailId}
+              id={RegistrationComponentIds.EMAIL}
               label="Email"
               hint="(Don't worry, we WILL sell your email for monies.)"
               error="Invalid email"
@@ -93,10 +99,10 @@ class RegistrationComponent extends Component {
 
         <br />
 
-        <div className="row">
-          <div className={columnClass}>
+        <div className={RegistrationComponentCss.ROW_CLASS}>
+          <div className={RegistrationComponentCss.COLUMN_CLASS}>
             <InputComponent
-              id={firstNameId}
+              id={RegistrationComponentIds.FIRST_NAME}
               label="First name"
               error="Invalid first name"
               placeholder={USER.first}
@@ -104,9 +110,9 @@ class RegistrationComponent extends Component {
             />
           </div>
 
-          <div className={columnClass}>
+          <div className={RegistrationComponentCss.COLUMN_CLASS}>
             <InputComponent
-              id={lastNameId}
+              id={RegistrationComponentIds.LAST_NAME}
               label="Last name"
               error="Invalid last name"
               placeholder={USER.last}
@@ -117,21 +123,21 @@ class RegistrationComponent extends Component {
 
         <br />
 
-        <div className="row">
-          <div className={columnClass}>
+        <div className={RegistrationComponentCss.ROW_CLASS}>
+          <div className={RegistrationComponentCss.COLUMN_CLASS}>
             <InputComponent
-              id={passwordId}
-              type="password"
+              id={RegistrationComponentIds.PASSWORD_ONE}
+              type={InputTypes.PASSWORD}
               label="Password"
               error="Invalid password"
               placeholder={USER.pass}
               onTextChangeCallback={this.onPasswordChange.bind(this)}
             />
           </div>
-          <div className={columnClass}>
+          <div className={RegistrationComponentCss.COLUMN_CLASS}>
             <InputComponent
-              id={passwordTwoId}
-              type="password"
+              id={RegistrationComponentIds.PASSWORD_TWO}
+              type={InputTypes.PASSWORD}
               label="Re-enter password"
               error="Invalid password"
               placeholder={USER.pass}
@@ -143,9 +149,9 @@ class RegistrationComponent extends Component {
         <br />
 
         <button
-          id={registerBtnId}
-          type="button"
-          className="btn btn-primary btn-smooth"
+          id={RegistrationComponentIds.REGISTRATION_BUTTON}
+          type={InputTypes.BUTTON}
+          className={RegistrationComponentCss.REGISTRATION_BUTTON_CLASS}
           onClick={this.register.bind(this)}
         >
           Register
@@ -155,13 +161,13 @@ class RegistrationComponent extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return { user: state.AccountReducer };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    login: user => dispatch(LoginAction(user))
+    login: (user) => dispatch(LoginAction(user)),
   };
 };
 
