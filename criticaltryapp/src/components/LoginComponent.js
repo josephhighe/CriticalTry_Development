@@ -5,17 +5,15 @@ import { Link } from "react-router-dom";
 import RoutingUtil, { Pages } from "../utils/RoutingUtil";
 import { PLACEHOLDER_ACCOUNT } from "../state/models/UserAccount";
 import { LoginAction } from "../state/actions/LoginAction";
-import Card, { ID_PREFIX as ROOT_ID_PREFIX } from "./card/Card";
+import Card from "./card/Card";
 import InputComponent from "./inputcomponent/InputComponent";
 
-import "../styles/Card.css";
-import "../styles/LoginComponent.css";
-
-const ROOT_ID_SUFFIX = "login-component";
-export const ROOT_ID = ROOT_ID_PREFIX + ROOT_ID_SUFFIX;
-export const USERNAME_ID = "username";
-export const PASSWORD_ID = "password";
-export const LOGIN_BTN_ID = "login-btn";
+const LoginComponentIds = {
+  ROOT_PREFIX: "login-component",
+  USERNAME: "username",
+  PASSWORD: "password",
+  LOGIN_BUTTON: "login-btn",
+};
 
 //placeholder account information to display
 const USER = PLACEHOLDER_ACCOUNT;
@@ -24,7 +22,7 @@ const USER = PLACEHOLDER_ACCOUNT;
 
 class LoginComponent extends Component {
   state = {
-    redirect: false
+    redirect: false,
   };
 
   login(event) {
@@ -42,7 +40,7 @@ class LoginComponent extends Component {
     //update state
     this.setState(() => ({
       redirect: user.isLoggedIn(),
-      isAccountLocked: user.isAccountLocked()
+      isAccountLocked: user.isAccountLocked(),
     }));
 
     //TODO handle show errors
@@ -64,7 +62,7 @@ class LoginComponent extends Component {
     //TODO handle account being locked
 
     return (
-      <Card id={ROOT_ID_SUFFIX}>
+      <Card id={LoginComponentIds.ROOT_PREFIX}>
         <h2>Critical Try Login</h2>
         <hr />
 
@@ -78,7 +76,7 @@ class LoginComponent extends Component {
         <br />
 
         <InputComponent
-          id={USERNAME_ID}
+          id={LoginComponentIds.USERNAME}
           label="Name"
           error="Invalid username"
           placeholder={USER.username}
@@ -88,7 +86,7 @@ class LoginComponent extends Component {
         <br />
 
         <InputComponent
-          id={PASSWORD_ID}
+          id={LoginComponentIds.PASSWORD}
           type="password"
           label="Password"
           error="Invalid password"
@@ -99,7 +97,7 @@ class LoginComponent extends Component {
         <br />
 
         <button
-          id={LOGIN_BTN_ID}
+          id={LoginComponentIds.LOGIN_BUTTON}
           type="button"
           className="btn-smooth btn btn-primary"
           onClick={this.login.bind(this)}
@@ -111,13 +109,13 @@ class LoginComponent extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return { user: state.AccountReducer };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    login: user => dispatch(LoginAction(user))
+    login: (user) => dispatch(LoginAction(user)),
   };
 };
 

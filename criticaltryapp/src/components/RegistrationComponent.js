@@ -7,7 +7,6 @@ import RoutingUtil, { Pages } from "../utils/RoutingUtil";
 import InputComponent, { InputTypes } from "./inputcomponent/InputComponent";
 import Card from "./card/Card";
 
-import "../styles/RegistrationComponent.css";
 import { Link } from "react-router-dom";
 
 export const RegistrationComponentIds = {

@@ -6,7 +6,12 @@
   text-align: left;
 }
 
-.card {
+.card-background {
+  width: 25rem;
   border: 2px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.5em;
+}
+
+.card-root {
+  padding: 10%;
 }
