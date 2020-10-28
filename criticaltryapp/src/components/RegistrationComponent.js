@@ -9,7 +9,7 @@ import Card from "./card/Card";
 
 import { Link } from "react-router-dom";
 
-export const RegistrationComponentIds = {
+const RegistrationComponentIds = {
   FIRST_NAME: "firstname",
   LAST_NAME: "lastname",
   EMAIL: "email",
