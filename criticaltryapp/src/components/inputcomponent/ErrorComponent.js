@@ -1,19 +1,23 @@
 import React from "react";
+import { optionalAdd } from "../../utils/ObjectUtil";
 
-export const ID_PREFIX = "error-";
+const ErrorComponentIds = {
+  PREFIX: "error-",
+};
+
+const ErrorComponentCss = {
+  DEFAULT_CLASS: "error-msg text-danger",
+};
 
 function ErrorComponent(props) {
   //id of element this error is for
   const id = props.id;
 
   //values for this error
-  const errorId = ID_PREFIX + id;
+  const errorId = ErrorComponentIds.PREFIX + id;
 
   //classname, allow additional classes
-  const defaultClass = "error-msg text-danger ";
-  const className = props.className
-    ? defaultClass + props.className
-    : defaultClass;
+  const className = optionalAdd(`${ErrorComponentCss} `, props.className);
 
   //the inner html for error (typically just text)
   const inner = props.children;

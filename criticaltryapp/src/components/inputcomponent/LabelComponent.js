@@ -1,19 +1,26 @@
 import React from "react";
+import { optionalAdd } from "../../utils/ObjectUtil";
 
-export const ID_PREFIX = "label-";
+const LabelComponentIds = {
+  PREFIX: "label-",
+};
+
+const LabelComponentCss = {
+  DEFAULT: "label-msg compact",
+};
 
 function LabelComponent(props) {
   //id of element this label is for
   const id = props.id;
 
   //values for this label
-  const labelId = ID_PREFIX + id;
+  const labelId = LabelComponentIds.PREFIX + id;
 
   //classname, allow additional classes
-  const defaultClass = "label-msg compact ";
-  const className = props.className
-    ? defaultClass + props.className
-    : defaultClass;
+  const className = optionalAdd(
+    `${LabelComponentCss.DEFAULT} `,
+    props.className
+  );
 
   //the inner html for label (typically just text)
   const inner = props.children;

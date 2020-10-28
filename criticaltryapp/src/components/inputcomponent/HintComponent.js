@@ -1,19 +1,26 @@
 import React from "react";
+import { optionalAdd } from "../../utils/ObjectUtil";
 
-export const ID_PREFIX = "hint-";
+const HintComponentIds = {
+  PREFIX: "hint-",
+};
+
+const HintComponentCss = {
+  DEFAULT: "hint-msg compact",
+};
 
 function HintComponent(props) {
   //id of element this hint is for
   const id = props.id;
 
   //values for this hint
-  const hintId = ID_PREFIX + id;
+  const hintId = HintComponentIds.PREFIX + id;
 
   //classname, allow additional classes
-  const defaultClass = "hint-msg compact ";
-  const className = props.className
-    ? defaultClass + props.className
-    : defaultClass;
+  const className = optionalAdd(
+    `${HintComponentCss.DEFAULT} `,
+    props.className
+  );
 
   //the inner html for hint (typically just text)
   const inner = props.children;
