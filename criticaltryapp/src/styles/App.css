@@ -41,6 +41,33 @@
   margin: auto;
 }
 
+/**
+ * Expands across the screen, aligning all content in the center (vertically and horizontally)
+ */
+.center-screen {
+  text-align: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+/**
+ * Makes a button look like a link/anchor (blue and underlined)
+ */
+button.link {
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .main {
   position: fixed;
   height: 100%;

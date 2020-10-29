@@ -3,11 +3,10 @@ import { connect } from "react-redux";
 
 import { PLACEHOLDER_ACCOUNT } from "../state/models/UserAccount";
 import { LoginAction } from "../state/actions/LoginAction";
-import RoutingUtil, { Pages } from "../utils/RoutingUtil";
+import RoutingUtil from "../utils/RoutingUtil";
 import InputComponent, { InputTypes } from "./inputcomponent/InputComponent";
 import Card from "./card/Card";
 
-import { Link } from "react-router-dom";
 
 const RegistrationComponentIds = {
   FIRST_NAME: "firstname",
@@ -72,15 +71,8 @@ class RegistrationComponent extends Component {
     return (
       <Card id={RegistrationComponentIds.REGISTRATION_BUTTON}>
         <h2>Register New Account</h2>
-        <hr />
 
-        <div className="container-fluid">
-          <p className="inline-block">Already have an account?</p>
-          &nbsp;
-          <Link className="inline-block" to={Pages.LOGIN}>
-            Login here!
-          </Link>
-        </div>
+        <hr />
         <br />
 
         <div className={RegistrationComponentCss.ROW_CLASS}>

@@ -4,12 +4,12 @@ import "../../styles/Card.css";
 import { optionalAdd } from "../../utils/ObjectUtil";
 
 const CardIds = {
-  CARD_PREFIX: "card-",
+  CARD_ROOT_PREFIX: "card-root-",
+  CARD_BODY_PREFIX: "card-body-",
 };
 
 const CardCss = {
   ROOT_CLASS: "card-root text-center",
-  BACKGROUND_CLASS: "card-background container-fluid",
   BODY_CLASS: "card-body",
   DEF_BACKGROUND_COLOR: "bg-info",
 };
@@ -30,19 +30,27 @@ const CardCss = {
  */
 
 function Card(props) {
-  const color = props.color ? props.color : CardCss.DEF_BACKGROUND_COLOR;
-  const backgroundClass = optionalAdd(
-    `${CardCss.BACKGROUND_CLASS} ${color} `,
+ var rootClass = null;
+
+  if (props.style && props.style.background) {
+    rootClass = rootClass = optionalAdd(
+      `${CardCss.ROOT_CLASS} `, 
+      props.className
+      );
+  }
+  else {    
+    rootClass = optionalAdd(
+    `${CardCss.ROOT_CLASS} ${CardCss.DEF_BACKGROUND_COLOR} `, 
     props.className
-  );
+    );
+    
+  }
 
   const inner = props.children ? props.children : "";
 
   return (
-    <div id={CardIds.CARD_PREFIX + props.id} className={CardCss.ROOT_CLASS}>
-      <div className={backgroundClass}>
-        <div className={CardCss.BODY_CLASS}>{inner}</div>
-      </div>
+    <div {...props} id={CardIds.CARD_ROOT_PREFIX + props.id} className={rootClass}>
+      <div id={CardIds.CARD_BODY_PREFIX + props.id} className={CardCss.BODY_CLASS}>{inner}</div>
     </div>
   );
 }

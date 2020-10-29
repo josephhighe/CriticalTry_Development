@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 
-import RoutingUtil, { Pages } from "../utils/RoutingUtil";
+import RoutingUtil from "../utils/RoutingUtil";
 import { PLACEHOLDER_ACCOUNT } from "../state/models/UserAccount";
 import { LoginAction } from "../state/actions/LoginAction";
 import Card from "./card/Card";
@@ -13,6 +12,10 @@ const LoginComponentIds = {
   USERNAME: "username",
   PASSWORD: "password",
   LOGIN_BUTTON: "login-btn",
+};
+
+const LoginComponentCss = {
+  CARD_STYLE: {width: "25rem"}
 };
 
 //placeholder account information to display
@@ -62,18 +65,11 @@ class LoginComponent extends Component {
     //TODO handle account being locked
 
     return (
-      <Card id={LoginComponentIds.ROOT_PREFIX}>
+      <Card id={LoginComponentIds.ROOT_PREFIX} style={LoginComponentCss.CARD_STYLE}>
         <h2>Critical Try Login</h2>
-        <hr />
 
-        <div className="container-fluid">
-          <p className="inline-block">Don't have an account?</p>
-          &nbsp;
-          <Link className="inline-block" to={Pages.REGISTRATION}>
-            Create one!
-          </Link>
-        </div>
-        <br />
+        <hr />
+        <br/>
 
         <InputComponent
           id={LoginComponentIds.USERNAME}
